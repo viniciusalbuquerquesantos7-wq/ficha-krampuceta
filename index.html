@@ -353,408 +353,91 @@
         .item-row input[type="text"]:focus {
             outline: none;
             border-color: #D4AF37;
-            box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
         }
 
-        .item-row input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-            accent-color: #8B0000;
-        }
-
-        .backstory-section {
-            margin-top: 15px;
-        }
-
-        .backstory-section textarea {
-            width: 100%;
-            min-height: 100px;
-            border: 2px solid #8B0000;
-            padding: 10px;
-            font-family: 'Courier New', monospace;
+        .item-row input[type="number"] {
+            border: 1px solid #8B0000;
+            padding: 6px;
             font-size: 11px;
+            text-align: center;
             background-color: rgba(0, 0, 0, 0.3);
             color: #e8dcc4;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
         }
 
-        .backstory-section textarea:focus {
+        .item-row input[type="number"]:focus {
             outline: none;
             border-color: #D4AF37;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
         }
 
-        .action-buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 8px;
-            margin-top: 20px;
-        }
-
-        .action-buttons button {
-            padding: 10px;
-            background: linear-gradient(135deg, #8B0000 0%, #5a0000 100%);
-            color: #D4AF37;
-            border: 2px solid #D4AF37;
-            font-weight: bold;
+        .item-row input[type="checkbox"] {
+            margin-right: 8px;
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #8B0000;
+            background-color: rgba(0, 0, 0, 0.3);
             cursor: pointer;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            border-radius: 3px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .action-buttons button:hover {
-            background: linear-gradient(135deg, #5a0000 0%, #8B0000 100%);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
-            transform: translateY(-2px);
-        }
-
-        .decorative-line {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #8B0000, transparent);
-            margin: 15px 0;
+            position: relative;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
         }
 
-        .corner-symbol {
+        .item-row input[type="checkbox"]:checked {
+            background-color: #8B0000;
+            border-color: #D4AF37;
+        }
+
+        .item-row input[type="checkbox"]:checked::after {
+            content: '✓';
+            color: #D4AF37;
+            font-size: 12px;
             position: absolute;
-            font-size: 18px;
-            color: #8B0000;
-            opacity: 0.3;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
-        .corner-symbol.top-left {
-            top: 8px;
-            left: 8px;
-        }
-
-        .corner-symbol.top-right {
-            top: 8px;
-            right: 8px;
-        }
-
-        .corner-symbol.bottom-left {
-            bottom: 8px;
-            left: 8px;
-        }
-
-        .corner-symbol.bottom-right {
-            bottom: 8px;
-            right: 8px;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        .modal-content {
-            background-color: #2a1515;
-            margin: 10% auto;
-            padding: 20px;
-            border: 2px solid #8B0000;
-            width: 90%;
-            max-width: 400px;
-            border-radius: 5px;
+        .item-row label {
+            display: flex;
+            align-items: center;
+            font-size: 11px;
             color: #e8dcc4;
         }
 
-        .modal-content h2 {
-            color: #D4AF37;
-            margin-bottom: 12px;
-            font-size: 14px;
+        .item-row label input[type="text"] {
+            flex-grow: 1;
+            margin-left: 8px;
         }
 
-        .modal-content p {
-            margin-bottom: 12px;
-            line-height: 1.5;
+        .notes-section textarea {
+            width: 100%;
+            min-height: 150px;
+            border: 2px solid #8B0000;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
             font-size: 12px;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #e8dcc4;
+            resize: vertical;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }
 
-        .close {
-            color: #D4AF37;
-            float: right;
-            font-size: 24px;
-            font-weight: bold;
-            cursor: pointer;
+        .notes-section textarea:focus {
+            outline: none;
+            border-color: #D4AF37;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
         }
 
-        .close:hover {
-            color: #fff;
-        }
-
-        .modal-buttons {
-            display: flex;
-            gap: 8px;
-            margin-top: 15px;
-        }
-
-        .modal-buttons button {
-            flex: 1;
-            padding: 8px;
-            background: linear-gradient(135deg, #8B0000 0%, #5a0000 100%);
-            color: #D4AF37;
-            border: 2px solid #D4AF37;
-            cursor: pointer;
-            font-weight: bold;
-            border-radius: 3px;
-            font-size: 11px;
-        }
-
-        .modal-buttons button:hover {
-            background: linear-gradient(135deg, #5a0000 0%, #8B0000 100%);
-        }
-
-        /* MEDIA QUERIES RESPONSIVAS */
-        @media (max-width: 768px) {
-            body {
-                padding: 8px;
-            }
-
-            .toolbar {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 6px;
-                padding: 8px;
-                margin-bottom: 12px;
-            }
-
-            .toolbar button {
-                padding: 8px;
-                font-size: 10px;
-            }
-
-            .container {
-                padding: 12px;
-                border: 3px solid #8B0000;
-            }
-
-            .header h1 {
-                font-size: 24px;
-                letter-spacing: 1px;
-            }
-
-            .header p {
-                font-size: 11px;
-            }
-
-            .info-row {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .info-field label {
-                font-size: 9px;
-            }
-
-            .info-field input {
-                font-size: 11px;
-                padding: 6px;
-            }
-
-            .attributes-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 8px;
-            }
-
-            .attribute-box {
-                padding: 8px;
-                border: 2px solid #8B0000;
-            }
-
-            .attribute-label {
-                font-size: 8px;
-            }
-
-            .attribute-value input {
-                width: 35px;
-                font-size: 12px;
-                padding: 4px;
-            }
-
-            .attribute-modifier input {
-                width: 35px;
-                font-size: 9px;
-            }
-
-            .section-title {
-                font-size: 11px;
-                padding: 6px 10px;
-            }
-
-            .item-row {
-                grid-template-columns: 1fr 80px;
-                gap: 6px;
-            }
-
-            .item-row input[type="text"] {
-                font-size: 10px;
-                padding: 5px;
-            }
-
-            .action-buttons {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 6px;
-            }
-
-            .action-buttons button {
-                padding: 8px;
-                font-size: 10px;
-            }
-
-            .backstory-section textarea {
-                font-size: 10px;
-                min-height: 70px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 5px;
-            }
-
-            .toolbar {
-                grid-template-columns: 1fr;
-                gap: 5px;
-                padding: 6px;
-                margin-bottom: 10px;
-            }
-
-            .toolbar button {
-                padding: 8px;
-                font-size: 10px;
-                width: 100%;
-            }
-
-            .container {
-                padding: 10px;
-                border: 2px solid #8B0000;
-            }
-
-            .header {
-                margin-bottom: 12px;
-                padding-bottom: 8px;
-            }
-
-            .header h1 {
-                font-size: 20px;
-                letter-spacing: 0.5px;
-            }
-
-            .header p {
-                font-size: 10px;
-            }
-
-            .attributes-grid {
-                grid-template-columns: 1fr;
-                gap: 6px;
-            }
-
-            .attribute-box {
-                padding: 6px;
-                border: 2px solid #8B0000;
-            }
-
-            .attribute-label {
-                font-size: 8px;
-            }
-
-            .attribute-value input {
-                width: 30px;
-                font-size: 11px;
-            }
-
-            .attribute-modifier {
-                font-size: 8px;
-            }
-
-            .attribute-modifier input {
-                width: 30px;
-                font-size: 8px;
-            }
-
-            .info-field label {
-                font-size: 8px;
-            }
-
-            .info-field input {
-                font-size: 10px;
-                padding: 5px;
-            }
-
-            .section-title {
-                font-size: 10px;
-                padding: 5px 8px;
-            }
-
-            .section {
-                margin-bottom: 12px;
-            }
-
-            .decorative-line {
-                margin: 8px 0;
-            }
-
-            .item-row {
-                grid-template-columns: 1fr 70px;
-                gap: 4px;
-            }
-
-            .item-row input[type="text"] {
-                font-size: 9px;
-                padding: 4px;
-            }
-
-            .action-buttons {
-                grid-template-columns: 1fr;
-                gap: 5px;
-            }
-
-            .action-buttons button {
-                padding: 8px;
-                font-size: 10px;
-                width: 100%;
-            }
-
-            .backstory-section textarea {
-                font-size: 9px;
-                min-height: 50px;
-            }
-
-            .modal-content {
-                width: 95%;
-                margin: 30% auto;
-                padding: 15px;
-            }
-
-            .modal-content h2 {
-                font-size: 13px;
-            }
-
-            .modal-content p {
-                font-size: 11px;
-            }
-        }
-
-        /* ESTILOS PARA IMPRESSÃO - COM CORES */
+        /* Print Styles */
         @media print {
             body {
-                background: white !important;
-                padding: 0 !important;
-                margin: 0 !important;
+                background: none;
+                color: #000;
             }
 
             .toolbar {
@@ -762,133 +445,87 @@
             }
 
             .container {
-                max-width: 100% !important;
-                margin: 0 !important;
-                padding: 15px !important;
-                border: 3px solid #8B0000 !important;
-                background: linear-gradient(135deg, #3d1f1f 0%, #2a1515 100%) !important;
-                box-shadow: none !important;
-                page-break-inside: avoid;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
+                max-width: 100%;
+                margin: 0;
+                border: none;
+                box-shadow: none;
+                background: none;
+                padding: 0;
             }
 
-            .container::before {
-                display: none !important;
-            }
-
-            .content {
-                background: transparent !important;
-            }
-
-            .header {
-                border-bottom: 3px solid #8B0000 !important;
-                border-top: 3px solid #8B0000 !important;
-                background: transparent !important;
-                page-break-inside: avoid;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
+            .header, .section-title {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                color: #000 !important;
+                background: #eee !important;
+                border-color: #000 !important;
             }
 
             .header h1 {
-                color: #D4AF37 !important;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+                color: #000 !important;
+                text-shadow: none;
             }
 
-            .header p {
-                color: #999 !important;
+            .header::before, .header::after {
+                color: #000 !important;
             }
 
-            .header::before,
-            .header::after {
-                color: #D4AF37 !important;
-            }
-
-            .section {
-                page-break-inside: avoid;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
-            .section-title {
-                background: linear-gradient(90deg, #8B0000 0%, #5a0000 50%, #8B0000 100%) !important;
-                color: #D4AF37 !important;
-                border-left: 4px solid #D4AF37 !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
+            .info-field input[type="text"],
+            .info-field input[type="number"],
+            .info-field textarea,
+            .attribute-value input[type="number"],
+            .attribute-modifier input,
+            .items-list,
+            .item-row input[type="text"],
+            .item-row input[type="number"],
+            .notes-section textarea {
+                border-color: #000 !important;
+                background-color: #fff !important;
+                color: #000 !important;
+                box-shadow: none !important;
             }
 
             .attribute-box {
-                border: 3px solid #8B0000 !important;
-                background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(139, 0, 0, 0.1) 100%) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
+                border-color: #000 !important;
+                background: #fff !important;
+                box-shadow: none !important;
+            }
+
+            .attribute-label {
+                color: #000 !important;
             }
 
             .attribute-box::before {
-                display: block !important;
-                color: #D4AF37 !important;
+                color: #000 !important;
+                background: #fff !important;
             }
 
-            .attribute-label {
-                color: #D4AF37 !important;
+            .item-row input[type="checkbox"] {
+                border-color: #000 !important;
             }
 
-            .attribute-value input,
-            .attribute-modifier input,
-            .info-field input,
-            .info-field textarea,
-            .item-row input,
-            .backstory-section textarea {
-                border: 2px solid #8B0000 !important;
-                background-color: rgba(0, 0, 0, 0.3) !important;
-                color: #e8dcc4 !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
+            .item-row input[type="checkbox"]:checked {
+                background-color: #000 !important;
+                border-color: #000 !important;
             }
 
-            .decorative-line {
-                background: linear-gradient(90deg, transparent, #8B0000, transparent) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
-            .items-list {
-                border: 2px solid #8B0000 !important;
-                background-color: rgba(0, 0, 0, 0.3) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
-            .corner-symbol {
-                display: none !important;
-            }
-
-            .action-buttons {
-                display: none !important;
-            }
-
-            .modal {
-                display: none !important;
-            }
-
-            .info-field label {
-                color: #D4AF37 !important;
+            .item-row input[type="checkbox"]:checked::after {
+                content: '✓';
+                color: #fff !important;
             }
         }
     </style>
 </head>
 <body>
     <div class="toolbar">
-        <button onclick="salvarDados()">💾 Salvar</button>
-        <button onclick="carregarDados()">📂 Carregar</button>
-        <button onclick="exportarJSON()">📄 JSON</button>
-        <button onclick="exportarPDF()">📕 PDF</button>
-        <button onclick="compartilharTexto()">📋 Copiar</button>
-        <button onclick="limparFormulario()">🗑️ Limpar</button>
+        <button id="save-btn">Salvar Localmente</button>
+        <button id="load-btn">Carregar Localmente</button>
+        <button id="clear-btn">Limpar Ficha</button>
+        <button id="pdf-btn">Exportar PDF</button>
+        <button id="print-btn">Imprimir Ficha</button>
     </div>
 
-    <div class="container">
+    <div class="container" id="character-sheet">
         <div class="corner-symbol top-left">✝</div>
         <div class="corner-symbol top-right">✝</div>
         <div class="corner-symbol bottom-left">✝</div>
@@ -896,6 +533,7 @@
 
         <div class="content">
             <div class="header">
+                <div id="point-buy-display" style="font-size: 14px; font-weight: bold; color: #D4AF37; margin-bottom: 5px;">Pontos Restantes: 20</div>
                 <h1>FICHA KRAMPUCETA</h1>
                 <p>Sistema RPG - Ordem Paranormal</p>
             </div>
@@ -905,21 +543,54 @@
                 <div class="section-title">Informações Básicas</div>
                 <div class="info-row">
                     <div class="info-field">
-                        <label>Nome do Agente</label>
-                        <input type="text" id="nomeAgente" placeholder="Nome">
+                        <label for="nome">Nome do Personagem</label>
+                        <input type="text" id="nome">
                     </div>
                     <div class="info-field">
-                        <label>Origem</label>
-                        <input type="text" id="origem" placeholder="Origem">
-                    </div>
-                    <div class="info-field">
-                        <label>Idade</label>
-                        <input type="number" id="idade" placeholder="Idade" min="1" max="120">
+                        <label for="jogador">Nome do Jogador</label>
+                        <input type="text" id="jogador">
                     </div>
                 </div>
                 <div class="info-row">
                     <div class="info-field">
-                        <label>Pontos de Vida (PV)</label>
+                        <label for="classe">Classe</label>
+                        <input type="text" id="classe">
+                    </div>
+                    <div class="info-field">
+                        <label for="origem">Origem</label>
+                        <input type="text" id="origem">
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="patente">Patente</label>
+                        <input type="text" id="patente">
+                    </div>
+                    <div class="info-field">
+                        <label for="nex">NEX</label>
+                        <input type="text" id="nex">
+                    </div>
+                </div>
+            </div>
+
+            <div class="decorative-line"></div>
+
+            <!-- Pontos de Status -->
+            <div class="section">
+                <div class="section-title">Pontos de Status</div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="pontosSanidade">Pontos de Sanidade (PS)</label>
+                        <input type="number" id="pontosSanidade" value="10" min="0" max="100">
+                    </div>
+                    <div class="info-field">
+                        <label for="pontosEsforco">Pontos de Esforço (PE)</label>
+                        <input type="number" id="pontosEsforco" value="10" min="0" max="100">
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="pontosVida">Pontos de Vida (PV)</label>
                         <input type="number" id="pontosVida" value="10" min="0" max="100">
                     </div>
                 </div>
@@ -929,7 +600,7 @@
 
             <!-- Atributos -->
             <div class="section">
-                <div class="section-title">Atributos - Pontos Disponíveis: <span id="pontosDisponiveis" style="color: #FFD700; font-weight: bold;">20</span>/20</div>
+                <div class="section-title">Atributos</div>
                 <div class="attributes-grid">
                     <div class="attribute-box">
                         <div class="attribute-label">Força</div>
@@ -1025,359 +696,393 @@
 
             <div class="decorative-line"></div>
 
-            <!-- Itens Úteis -->
-            <div class="section items-section">
-                <div class="section-title">Itens Úteis</div>
-                <div class="items-list">
-                    <div class="item-row">
-                        <input type="text" class="itemUtil" placeholder="Item">
-                        <label style="display: flex; align-items: center; gap: 6px; color: #e8dcc4; font-size: 10px;">
-                            <input type="checkbox" class="itemUtilCheck"> Equip.
-                        </label>
+            <!-- Perícias -->
+            <div class="section">
+                <div class="section-title">Perícias</div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="acrobacia">Acrobacia</label>
+                        <input type="text" id="acrobacia">
                     </div>
-                    <div class="item-row">
-                        <input type="text" class="itemUtil" placeholder="Item">
-                        <label style="display: flex; align-items: center; gap: 6px; color: #e8dcc4; font-size: 10px;">
-                            <input type="checkbox" class="itemUtilCheck"> Equip.
-                        </label>
+                    <div class="info-field">
+                        <label for="adestramento">Adestramento</label>
+                        <input type="text" id="adestramento">
                     </div>
-                    <div class="item-row">
-                        <input type="text" class="itemUtil" placeholder="Item">
-                        <label style="display: flex; align-items: center; gap: 6px; color: #e8dcc4; font-size: 10px;">
-                            <input type="checkbox" class="itemUtilCheck"> Equip.
-                        </label>
+                </div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="artes">Artes</label>
+                        <input type="text" id="artes">
                     </div>
-                    <div class="item-row">
-                        <input type="text" class="itemUtil" placeholder="Item">
-                        <label style="display: flex; align-items: center; gap: 6px; color: #e8dcc4; font-size: 10px;">
-                            <input type="checkbox" class="itemUtilCheck"> Equip.
-                        </label>
+                    <div class="info-field">
+                        <label for="atletismo">Atletismo</label>
+                        <input type="text" id="atletismo">
                     </div>
-                    <div class="item-row">
-                        <input type="text" class="itemUtil" placeholder="Item">
-                        <label style="display: flex; align-items: center; gap: 6px; color: #e8dcc4; font-size: 10px;">
-                            <input type="checkbox" class="itemUtilCheck"> Equip.
-                        </label>
+                </div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="atualidades">Atualidades</label>
+                        <input type="text" id="atualidades">
+                    </div>
+                    <div class="info-field">
+                        <label for="ciencia">Ciência</label>
+                        <input type="text" id="ciencia">
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="crime">Crime</label>
+                        <input type="text" id="crime">
+                    </div>
+                    <div class="info-field">
+                        <label for="diplomacia">Diplomacia</label>
+                        <input type="text" id="diplomacia">
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="enganacao">Enganação</label>
+                        <input type="text" id="enganacao">
+                    </div>
+                    <div class="info-field">
+                        <label for="fortitude">Fortitude</label>
+                        <input type="text" id="fortitude">
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="furtividade">Furtividade</label>
+                        <input type="text" id="furtividade">
+                    </div>
+                    <div class="info-field">
+                        <label for="iniciativa">Iniciativa</label>
+                        <input type="text" id="iniciativa">
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="intimidacao">Intimidação</label>
+                        <input type="text" id="intimidacao">
+                    </div>
+                    <div class="info-field">
+                        <label for="intuicao">Intuição</label>
+                        <input type="text" id="intuicao">
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="investigacao">Investigação</label>
+                        <input type="text" id="investigacao">
+                    </div>
+                    <div class="info-field">
+                        <label for="luta">Luta</label>
+                        <input type="text" id="luta">
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="medicina">Medicina</label>
+                        <input type="text" id="medicina">
+                    </div>
+                    <div class="info-field">
+                        <label for="ocultismo">Ocultismo</label>
+                        <input type="text" id="ocultismo">
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="percepcaoPericia">Percepção</label>
+                        <input type="text" id="percepcaoPericia">
+                    </div>
+                    <div class="info-field">
+                        <label for="pilotagem">Pilotagem</label>
+                        <input type="text" id="pilotagem">
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="pontaria">Pontaria</label>
+                        <input type="text" id="pontaria">
+                    </div>
+                    <div class="info-field">
+                        <label for="profissao">Profissão</label>
+                        <input type="text" id="profissao">
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="reflexos">Reflexos</label>
+                        <input type="text" id="reflexos">
+                    </div>
+                    <div class="info-field">
+                        <label for="religiao">Religião</label>
+                        <input type="text" id="religiao">
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="sobrevivencia">Sobrevivência</label>
+                        <input type="text" id="sobrevivencia">
+                    </div>
+                    <div class="info-field">
+                        <label for="sorte">Sorte</label>
+                        <input type="text" id="sorte">
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="taticas">Táticas</label>
+                        <input type="text" id="taticas">
+                    </div>
+                    <div class="info-field">
+                        <label for="tecnologia">Tecnologia</label>
+                        <input type="text" id="tecnologia">
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-field">
+                        <label for="vontade">Vontade</label>
+                        <input type="text" id="vontade">
                     </div>
                 </div>
             </div>
 
-            <!-- Itens Adicionais -->
+            <div class="decorative-line"></div>
+
+            <!-- Itens e Equipamentos -->
             <div class="section items-section">
-                <div class="section-title">Itens Adicionais</div>
+                <div class="section-title">Itens e Equipamentos</div>
                 <div class="items-list">
                     <div class="item-row">
-                        <input type="text" class="itemAdicional" placeholder="Item">
-                        <label style="display: flex; align-items: center; gap: 6px; color: #e8dcc4; font-size: 10px;">
-                            <input type="checkbox" class="itemAdicionalCheck"> Equip.
-                        </label>
+                        <label><input type="checkbox" id="item1Check"><input type="text" id="item1Nome" placeholder="Nome do Item"></label>
+                        <input type="number" id="item1Qtd" placeholder="Qtd">
                     </div>
                     <div class="item-row">
-                        <input type="text" class="itemAdicional" placeholder="Item">
-                        <label style="display: flex; align-items: center; gap: 6px; color: #e8dcc4; font-size: 10px;">
-                            <input type="checkbox" class="itemAdicionalCheck"> Equip.
-                        </label>
+                        <label><input type="checkbox" id="item2Check"><input type="text" id="item2Nome" placeholder="Nome do Item"></label>
+                        <input type="number" id="item2Qtd" placeholder="Qtd">
                     </div>
                     <div class="item-row">
-                        <input type="text" class="itemAdicional" placeholder="Item">
-                        <label style="display: flex; align-items: center; gap: 6px; color: #e8dcc4; font-size: 10px;">
-                            <input type="checkbox" class="itemAdicionalCheck"> Equip.
-                        </label>
+                        <label><input type="checkbox" id="item3Check"><input type="text" id="item3Nome" placeholder="Nome do Item"></label>
+                        <input type="number" id="item3Qtd" placeholder="Qtd">
                     </div>
                     <div class="item-row">
-                        <input type="text" class="itemAdicional" placeholder="Item">
-                        <label style="display: flex; align-items: center; gap: 6px; color: #e8dcc4; font-size: 10px;">
-                            <input type="checkbox" class="itemAdicionalCheck"> Equip.
-                        </label>
+                        <label><input type="checkbox" id="item4Check"><input type="text" id="item4Nome" placeholder="Nome do Item"></label>
+                        <input type="number" id="item4Qtd" placeholder="Qtd">
                     </div>
                     <div class="item-row">
-                        <input type="text" class="itemAdicional" placeholder="Item">
-                        <label style="display: flex; align-items: center; gap: 6px; color: #e8dcc4; font-size: 10px;">
-                            <input type="checkbox" class="itemAdicionalCheck"> Equip.
-                        </label>
+                        <label><input type="checkbox" id="item5Check"><input type="text" id="item5Nome" placeholder="Nome do Item"></label>
+                        <input type="number" id="item5Qtd" placeholder="Qtd">
+                    </div>
+                    <div class="item-row">
+                        <label><input type="checkbox" id="item6Check"><input type="text" id="item6Nome" placeholder="Nome do Item"></label>
+                        <input type="number" id="item6Qtd" placeholder="Qtd">
+                    </div>
+                    <div class="item-row">
+                        <label><input type="checkbox" id="item7Check"><input type="text" id="item7Nome" placeholder="Nome do Item"></label>
+                        <input type="number" id="item7Qtd" placeholder="Qtd">
+                    </div>
+                    <div class="item-row">
+                        <label><input type="checkbox" id="item8Check"><input type="text" id="item8Nome" placeholder="Nome do Item"></label>
+                        <input type="number" id="item8Qtd" placeholder="Qtd">
+                    </div>
+                    <div class="item-row">
+                        <label><input type="checkbox" id="item9Check"><input type="text" id="item9Nome" placeholder="Nome do Item"></label>
+                        <input type="number" id="item9Qtd" placeholder="Qtd">
+                    </div>
+                    <div class="item-row">
+                        <label><input type="checkbox" id="item10Check"><input type="text" id="item10Nome" placeholder="Nome do Item"></label>
+                        <input type="number" id="item10Qtd" placeholder="Qtd">
                     </div>
                 </div>
             </div>
 
-            <!-- Backstory -->
-            <div class="section backstory-section">
-                <div class="section-title">Backstory</div>
-                <textarea id="backstory" placeholder="História do personagem..."></textarea>
+            <div class="decorative-line"></div>
+
+            <!-- Habilidades e Poderes -->
+            <div class="section notes-section">
+                <div class="section-title">Habilidades e Poderes</div>
+                <textarea id="habilidades"></textarea>
             </div>
 
-            <!-- Botões de Ação -->
-            <div class="action-buttons">
-                <button onclick="window.print()">🖨️ Imprimir</button>
-                <button onclick="salvarDados()">💾 Salvar</button>
-                <button onclick="exportarPDF()">📕 PDF</button>
-            </div>
-        </div>
-    </div>
+            <div class="decorative-line"></div>
 
-    <!-- Modal -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="fecharModal()">&times;</span>
-            <h2 id="modalTitulo">Mensagem</h2>
-            <p id="modalTexto"></p>
-            <div class="modal-buttons">
-                <button onclick="fecharModal()">OK</button>
+            <!-- Rituais e Magias -->
+            <div class="section notes-section">
+                <div class="section-title">Rituais e Magias</div>
+                <textarea id="rituais"></textarea>
+            </div>
+
+            <div class="decorative-line"></div>
+
+            <!-- Anotações -->
+            <div class="section notes-section">
+                <div class="section-title">Anotações</div>
+                <textarea id="anotacoes"></textarea>
             </div>
         </div>
     </div>
 
     <script>
-        function atualizarPontos() {
-            const atributos = document.querySelectorAll('.atributo');
-            let totalPontosUsados = 0;
-            
-            atributos.forEach(atributo => {
-                const valor = parseInt(atributo.value) || 0;
-                totalPontosUsados += valor;
+        const MAX_POINTS = 20;
+        const attributeIds = ['forca', 'agilidade', 'crenca', 'conhecimento', 'inteligencia', 'percepcao', 'constituicao', 'resistenciaSobrenatural', 'carisma'];
+
+        function calculatePointsSpent() {
+            let totalSpent = 0;
+            attributeIds.forEach(id => {
+                const input = document.getElementById(id);
+                // Usar parseInt para garantir que o valor é um número
+                totalSpent += parseInt(input.value) || 0;
             });
+            return totalSpent;
+        }
+
+        function updatePointBuy() {
+            const totalSpent = calculatePointsSpent();
+            const remainingPoints = MAX_POINTS - totalSpent;
+            const display = document.getElementById('point-buy-display');
+            display.textContent = `Pontos Restantes: ${remainingPoints}`;
+
+            // Se os pontos restantes forem 0 ou menos, desabilita o aumento
+            attributeIds.forEach(id => {
+                const input = document.getElementById(id);
+                
+                // Se o total gasto for maior ou igual ao máximo, e o atributo não for 0,
+                // desabilita o input para impedir o aumento (o min="0" já impede a diminuição abaixo de 0)
+                if (totalSpent >= MAX_POINTS && parseInt(input.value) > 0) {
+                    // Não desabilitamos, apenas controlamos o valor no input
+                }
+            });
+        }
+
+        // Função para controlar o input e garantir que o limite não seja excedido
+        function handleAttributeInput(event) {
+            const input = event.target;
+            let newValue = parseInt(input.value) || 0;
+            const oldValue = parseInt(input.getAttribute('data-old-value')) || 0;
             
-            const pontosDisponiveis = 20 - totalPontosUsados;
-            document.getElementById('pontosDisponiveis').textContent = pontosDisponiveis;
+            // Garante que o valor não seja negativo
+            if (newValue < 0) {
+                newValue = 0;
+                input.value = 0;
+            }
+
+            let totalSpent = calculatePointsSpent();
             
-            if (pontosDisponiveis <= 0) {
-                atributos.forEach(atributo => {
-                    if (parseInt(atributo.value) === 0) {
-                        atributo.disabled = true;
+            // Se o novo valor for maior que o antigo (tentando aumentar)
+            if (newValue > oldValue) {
+                // Se o total gasto exceder o limite, reverte o valor
+                if (totalSpent > MAX_POINTS) {
+                    input.value = oldValue;
+                    totalSpent = calculatePointsSpent(); // Recalcula o total após a reversão
+                }
+            }
+            
+            // Atualiza o valor antigo para o próximo evento
+            input.setAttribute('data-old-value', input.value);
+            
+            updatePointBuy();
+            saveCharacterSheet(); // Salva após a atualização
+        }
+
+        // Modifica a função loadCharacterSheet para inicializar o Point Buy
+        function loadCharacterSheet() {
+            const inputs = document.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                const savedValue = localStorage.getItem(input.id);
+                if (savedValue !== null) {
+                    if (input.type === 'checkbox') {
+                        input.checked = savedValue === 'true';
                     } else {
-                        atributo.disabled = false;
+                        input.value = savedValue;
+                    }
+                }
+                // Inicializa o valor antigo para o controle de Point Buy
+                if (attributeIds.includes(input.id)) {
+                    input.setAttribute('data-old-value', input.value);
+                }
+            });
+            updatePointBuy(); // Inicializa o display de pontos
+            console.log('Ficha carregada localmente.');
+        }
+
+        // Adicionar listeners de evento
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCharacterSheet();
+
+            // Adicionar listener para salvar automaticamente ao digitar
+            const inputs = document.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', saveCharacterSheet);
+            });
+
+            // Adicionar listeners para os atributos para controle de Point Buy
+            attributeIds.forEach(id => {
+                const input = document.getElementById(id);
+                // Usa 'change' para garantir que o valor final é verificado
+                input.addEventListener('change', handleAttributeInput);
+                // Usa 'input' para capturar mudanças ao digitar
+                input.addEventListener('input', handleAttributeInput);
+            });
+
+            // Adicionar listeners para os botões da toolbar
+            document.getElementById('save-btn').addEventListener('click', saveCharacterSheet);
+            document.getElementById('load-btn').addEventListener('click', loadCharacterSheet);
+            document.getElementById('clear-btn').addEventListener('click', clearCharacterSheet);
+            document.getElementById('pdf-btn').addEventListener('click', exportToPDF);
+            document.getElementById('print-btn').addEventListener('click', () => window.print());
+        });
+
+        // O restante do seu script original...
+        // Função para salvar dados no localStorage
+        function saveCharacterSheet() {
+            const inputs = document.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                if (input.type === 'checkbox') {
+                    localStorage.setItem(input.id, input.checked);
+                } else {
+                    localStorage.setItem(input.id, input.value);
+                }
+            });
+            console.log('Ficha salva localmente.');
+        }
+
+        // Função para limpar dados do localStorage
+        function clearCharacterSheet() {
+            if (confirm('Tem certeza que deseja limpar todos os dados da ficha? Esta ação é irreversível.')) {
+                const inputs = document.querySelectorAll('input, textarea');
+                inputs.forEach(input => {
+                    localStorage.removeItem(input.id);
+                    if (input.type === 'checkbox') {
+                        input.checked = false;
+                    } else {
+                        input.value = '';
                     }
                 });
-                document.getElementById('pontosDisponiveis').style.color = '#FF4444';
-            } else {
-                atributos.forEach(atributo => {
-                    atributo.disabled = false;
-                });
-                document.getElementById('pontosDisponiveis').style.color = '#FFD700';
+                updatePointBuy(); // Atualiza o display de pontos após limpar
+                console.log('Ficha limpa.');
             }
         }
 
-        function salvarDados() {
-            const dados = {
-                nomeAgente: document.getElementById('nomeAgente').value,
-                origem: document.getElementById('origem').value,
-                idade: document.getElementById('idade').value,
-                pontosVida: document.getElementById('pontosVida').value,
-                forca: document.getElementById('forca').value,
-                forcaMod: document.getElementById('forcaMod').value,
-                agilidade: document.getElementById('agilidade').value,
-                agilidadeMod: document.getElementById('agilidadeMod').value,
-                crenca: document.getElementById('crenca').value,
-                crencaMod: document.getElementById('crencaMod').value,
-                conhecimento: document.getElementById('conhecimento').value,
-                conhecimentoMod: document.getElementById('conhecimentoMod').value,
-                inteligencia: document.getElementById('inteligencia').value,
-                inteligenciaMod: document.getElementById('inteligenciaMod').value,
-                percepcao: document.getElementById('percepcao').value,
-                percepcaoMod: document.getElementById('percepcaoMod').value,
-                constituicao: document.getElementById('constituicao').value,
-                constituicaoMod: document.getElementById('constituicaoMod').value,
-                resistenciaSobrenatural: document.getElementById('resistenciaSobrenatural').value,
-                resistenciaSobrenaturalMod: document.getElementById('resistenciaSobrenaturalMod').value,
-                carisma: document.getElementById('carisma').value,
-                carismaMod: document.getElementById('carismaMod').value,
-                itensUteis: Array.from(document.querySelectorAll('.itemUtil')).map((el, i) => ({
-                    nome: el.value,
-                    equipado: document.querySelectorAll('.itemUtilCheck')[i].checked
-                })),
-                itensAdicionais: Array.from(document.querySelectorAll('.itemAdicional')).map((el, i) => ({
-                    nome: el.value,
-                    equipado: document.querySelectorAll('.itemAdicionalCheck')[i].checked
-                })),
-                backstory: document.getElementById('backstory').value
-            };
-            localStorage.setItem('fichaDados', JSON.stringify(dados));
-            mostrarModal('✅ Sucesso', 'Dados salvos localmente!');
-        }
-
-        function carregarDados() {
-            const dados = JSON.parse(localStorage.getItem('fichaDados'));
-            if (!dados) {
-                mostrarModal('⚠️ Aviso', 'Nenhum dado salvo encontrado.');
-                return;
-            }
-            document.getElementById('nomeAgente').value = dados.nomeAgente || '';
-            document.getElementById('origem').value = dados.origem || '';
-            document.getElementById('idade').value = dados.idade || '';
-            document.getElementById('pontosVida').value = dados.pontosVida || '10';
-            document.getElementById('forca').value = dados.forca || '0';
-            document.getElementById('forcaMod').value = dados.forcaMod || '';
-            document.getElementById('agilidade').value = dados.agilidade || '0';
-            document.getElementById('agilidadeMod').value = dados.agilidadeMod || '';
-            document.getElementById('crenca').value = dados.crenca || '0';
-            document.getElementById('crencaMod').value = dados.crencaMod || '';
-            document.getElementById('conhecimento').value = dados.conhecimento || '0';
-            document.getElementById('conhecimentoMod').value = dados.conhecimentoMod || '';
-            document.getElementById('inteligencia').value = dados.inteligencia || '0';
-            document.getElementById('inteligenciaMod').value = dados.inteligenciaMod || '';
-            document.getElementById('percepcao').value = dados.percepcao || '0';
-            document.getElementById('percepcaoMod').value = dados.percepcaoMod || '';
-            document.getElementById('constituicao').value = dados.constituicao || '0';
-            document.getElementById('constituicaoMod').value = dados.constituicaoMod || '';
-            document.getElementById('resistenciaSobrenatural').value = dados.resistenciaSobrenatural || '0';
-            document.getElementById('resistenciaSobrenaturalMod').value = dados.resistenciaSobrenaturalMod || '';
-            document.getElementById('carisma').value = dados.carisma || '0';
-            document.getElementById('carismaMod').value = dados.carismaMod || '';
-            document.getElementById('backstory').value = dados.backstory || '';
-            if (dados.itensUteis) {
-                dados.itensUteis.forEach((item, i) => {
-                    document.querySelectorAll('.itemUtil')[i].value = item.nome;
-                    document.querySelectorAll('.itemUtilCheck')[i].checked = item.equipado;
-                });
-            }
-            if (dados.itensAdicionais) {
-                dados.itensAdicionais.forEach((item, i) => {
-                    document.querySelectorAll('.itemAdicional')[i].value = item.nome;
-                    document.querySelectorAll('.itemAdicionalCheck')[i].checked = item.equipado;
-                });
-            }
-            atualizarPontos();
-            mostrarModal('✅ Sucesso', 'Dados carregados!');
-        }
-
-        function exportarJSON() {
-            const dados = {
-                nomeAgente: document.getElementById('nomeAgente').value,
-                origem: document.getElementById('origem').value,
-                idade: document.getElementById('idade').value,
-                pontosVida: document.getElementById('pontosVida').value,
-                atributos: {
-                    forca: document.getElementById('forca').value,
-                    forcaMod: document.getElementById('forcaMod').value,
-                    agilidade: document.getElementById('agilidade').value,
-                    agilidadeMod: document.getElementById('agilidadeMod').value,
-                    crenca: document.getElementById('crenca').value,
-                    crencaMod: document.getElementById('crencaMod').value,
-                    conhecimento: document.getElementById('conhecimento').value,
-                    conhecimentoMod: document.getElementById('conhecimentoMod').value,
-                    inteligencia: document.getElementById('inteligencia').value,
-                    inteligenciaMod: document.getElementById('inteligenciaMod').value,
-                    percepcao: document.getElementById('percepcao').value,
-                    percepcaoMod: document.getElementById('percepcaoMod').value,
-                    constituicao: document.getElementById('constituicao').value,
-                    constituicaoMod: document.getElementById('constituicaoMod').value,
-                    resistenciaSobrenatural: document.getElementById('resistenciaSobrenatural').value,
-                    resistenciaSobrenaturalMod: document.getElementById('resistenciaSobrenaturalMod').value,
-                    carisma: document.getElementById('carisma').value,
-                    carismaMod: document.getElementById('carismaMod').value
-                },
-                itensUteis: Array.from(document.querySelectorAll('.itemUtil')).map((el, i) => ({
-                    nome: el.value,
-                    equipado: document.querySelectorAll('.itemUtilCheck')[i].checked
-                })),
-                itensAdicionais: Array.from(document.querySelectorAll('.itemAdicional')).map((el, i) => ({
-                    nome: el.value,
-                    equipado: document.querySelectorAll('.itemAdicionalCheck')[i].checked
-                })),
-                backstory: document.getElementById('backstory').value,
-                dataExportacao: new Date().toLocaleString('pt-BR')
-            };
-            const json = JSON.stringify(dados, null, 2);
-            const blob = new Blob([json], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `ficha_${dados.nomeAgente || 'agente'}_${Date.now()}.json`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            mostrarModal('✅ Sucesso', 'JSON exportado!');
-        }
-
-        function exportarPDF() {
-            const elemento = document.querySelector('.container');
+        // Função para exportar para PDF
+        function exportToPDF() {
+            const element = document.getElementById('character-sheet');
             const opt = {
-                margin: 5,
-                filename: `ficha_${document.getElementById('nomeAgente').value || 'agente'}_${Date.now()}.pdf`,
+                margin: 0.5,
+                filename: 'ficha_krampuceta.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true, allowTaint: true },
-                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+                html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
             };
-            html2pdf().set(opt).from(elemento).save();
-            mostrarModal('✅ Sucesso', 'PDF exportado com sucesso!');
-        }
 
-        function compartilharTexto() {
-            const texto = `FICHA KRAMPUCETA - ORDEM PARANORMAL RPG\n========================================\n\nAGENTE: ${document.getElementById('nomeAgente').value || 'N/A'}\nORIGEM: ${document.getElementById('origem').value || 'N/A'}\nIDADE: ${document.getElementById('idade').value || 'N/A'}\nPONTOS DE VIDA: ${document.getElementById('pontosVida').value || '10'}\n\nATRIBUTOS:\n- Força: ${document.getElementById('forca').value}\n- Agilidade: ${document.getElementById('agilidade').value}\n- Crença: ${document.getElementById('crenca').value}\n- Conhecimento: ${document.getElementById('conhecimento').value}\n- Inteligência: ${document.getElementById('inteligencia').value}\n- Percepção: ${document.getElementById('percepcao').value}\n- Constituição: ${document.getElementById('constituicao').value}\n- Resist. Sobrenatural: ${document.getElementById('resistenciaSobrenatural').value}\n- Carisma: ${document.getElementById('carisma').value}\n\nBACKSTORY:\n${document.getElementById('backstory').value || 'N/A'}`;
-            navigator.clipboard.writeText(texto).then(() => {
-                mostrarModal('✅ Sucesso', 'Ficha copiada!');
-            }).catch(() => {
-                mostrarModal('❌ Erro', 'Falha ao copiar.');
+            // Ocultar a barra de ferramentas antes de gerar o PDF
+            const toolbar = document.querySelector('.toolbar');
+            toolbar.style.display = 'none';
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Mostrar a barra de ferramentas novamente após a geração
+                toolbar.style.display = 'grid';
             });
         }
-
-        function limparFormulario() {
-            if (confirm('Tem certeza que deseja limpar tudo?')) {
-                document.querySelectorAll('input, textarea').forEach(el => {
-                    if (el.type === 'checkbox') el.checked = false;
-                    else if (el.type === 'number') el.value = el.id === 'pontosVida' ? '10' : '0';
-                    else el.value = '';
-                });
-                atualizarPontos();
-                mostrarModal('✅ Sucesso', 'Formulário limpo!');
-            }
-        }
-
-        function mostrarModal(titulo, texto) {
-            document.getElementById('modalTitulo').textContent = titulo;
-            document.getElementById('modalTexto').textContent = texto;
-            document.getElementById('modal').style.display = 'block';
-        }
-
-        function fecharModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('modal');
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        }
-
-        setInterval(() => {
-            if (document.getElementById('nomeAgente').value) {
-                const dados = {
-                    nomeAgente: document.getElementById('nomeAgente').value,
-                    origem: document.getElementById('origem').value,
-                    idade: document.getElementById('idade').value,
-                    pontosVida: document.getElementById('pontosVida').value,
-                    forca: document.getElementById('forca').value,
-                    forcaMod: document.getElementById('forcaMod').value,
-                    agilidade: document.getElementById('agilidade').value,
-                    agilidadeMod: document.getElementById('agilidadeMod').value,
-                    crenca: document.getElementById('crenca').value,
-                    crencaMod: document.getElementById('crencaMod').value,
-                    conhecimento: document.getElementById('conhecimento').value,
-                    conhecimentoMod: document.getElementById('conhecimentoMod').value,
-                    inteligencia: document.getElementById('inteligencia').value,
-                    inteligenciaMod: document.getElementById('inteligenciaMod').value,
-                    percepcao: document.getElementById('percepcao').value,
-                    percepcaoMod: document.getElementById('percepcaoMod').value,
-                    constituicao: document.getElementById('constituicao').value,
-                    constituicaoMod: document.getElementById('constituicaoMod').value,
-                    resistenciaSobrenatural: document.getElementById('resistenciaSobrenatural').value,
-                    resistenciaSobrenaturalMod: document.getElementById('resistenciaSobrenaturalMod').value,
-                    carisma: document.getElementById('carisma').value,
-                    carismaMod: document.getElementById('carismaMod').value,
-                    itensUteis: Array.from(document.querySelectorAll('.itemUtil')).map((el, i) => ({
-                        nome: el.value,
-                        equipado: document.querySelectorAll('.itemUtilCheck')[i].checked
-                    })),
-                    itensAdicionais: Array.from(document.querySelectorAll('.itemAdicional')).map((el, i) => ({
-                        nome: el.value,
-                        equipado: document.querySelectorAll('.itemAdicionalCheck')[i].checked
-                    })),
-                    backstory: document.getElementById('backstory').value
-                };
-                localStorage.setItem('fichaDados', JSON.stringify(dados));
-            }
-        }, 30000);
     </script>
 </body>
 </html>
