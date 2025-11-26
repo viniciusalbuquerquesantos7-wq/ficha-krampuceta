@@ -960,25 +960,27 @@
             let newValue = parseInt(input.value) || 0;
             const oldValue = parseInt(input.getAttribute('data-old-value')) || 0;
             
-            // Garante que o valor não seja negativo
+            // 1. Garante que o valor não seja negativo
             if (newValue < 0) {
                 newValue = 0;
                 input.value = 0;
             }
 
-            let totalSpent = calculatePointsSpent();
+            // 2. Calcula o total gasto *sem* a contribuição do valor antigo deste atributo
+            let totalSpentWithoutCurrent = calculatePointsSpent() - oldValue;
             
-            // Se o novo valor for maior que o antigo (tentando aumentar)
-            if (newValue > oldValue) {
-                // Se o total gasto exceder o limite, reverte o valor
-                if (totalSpent > MAX_POINTS) {
-                    input.value = oldValue;
-                    totalSpent = calculatePointsSpent(); // Recalcula o total após a reversão
-                }
+            // 3. Verifica se o novo valor excede o limite
+            if (totalSpentWithoutCurrent + newValue > MAX_POINTS) {
+                // Calcula o valor máximo que este atributo pode ter
+                const maxAllowed = MAX_POINTS - totalSpentWithoutCurrent;
+                
+                // Ajusta o valor do input para o máximo permitido
+                input.value = maxAllowed;
+                newValue = maxAllowed; // Atualiza newValue para o valor ajustado
             }
             
-            // Atualiza o valor antigo para o próximo evento
-            input.setAttribute('data-old-value', input.value);
+            // 4. Atualiza o valor antigo para o próximo evento
+            input.setAttribute('data-old-value', newValue);
             
             updatePointBuy();
             saveCharacterSheet(); // Salva após a atualização
